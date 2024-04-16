@@ -16,6 +16,11 @@ export class DataTransferService {
     return this.http.post(`${environment.apiBaseUrl}/user/signup`, postData);
   }
 
+  getLogin(postData: any)
+  {
+    return this.http.post(`${environment.apiBaseUrl}/user/login`, postData)
+  }
+
   getAllBrands() {
     return this.http.get(`${environment.apiBaseUrl}/answers/getAllanswers`);
   }

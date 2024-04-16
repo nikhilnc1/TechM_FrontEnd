@@ -26,8 +26,8 @@ export class LoginComponent implements OnInit {
     }
     else{
       this.loginForm = this.formBuilder.group({
-        U_email: ['', [Validators.required]],
-        U_password: ['',[Validators.required]]
+        email: ['', [Validators.required]],
+        password: ['',[Validators.required]]
       });
     }    
   }
@@ -41,13 +41,13 @@ export class LoginComponent implements OnInit {
       return;
     }
     console.log('onSubmit',this.loginForm.value);
-    this.dataTransferService.loginUser(this.loginForm.value).subscribe((response:any)=>{
+    this.dataTransferService.getLogin(this.loginForm.value).subscribe((response:any)=>{
       console.log('loginUser',response);
-      if(response?.status==200){
+      if(response.userId!=null){
         this.toastr.info("User successfully login");
         this.router.navigate([`/dashboard`]);
-        localStorage.setItem('token',response.token);
-        // localStorage.setItem('roleId',res.AD_roleId);
+        localStorage.setItem('token',response.jwt);
+        localStorage.setItem('roleId',response.userId);
       }
       else{
         this.toastr.info("Email or password is incorrect");
