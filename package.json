@@ -19,7 +19,6 @@
     "@angular/platform-browser-dynamic": "~13.0.0",
     "@angular/router": "~13.0.0",
     "@mdi/font": "^3.6.95",
-    "@ng-bootstrap/ng-bootstrap": "^5.2.1",
     "@ng-select/ng-select": "^8.0.0",
     "ace-builds": "^1.15.3",
     "bootstrap": "^4.5.0",
